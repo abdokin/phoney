@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             FtpSeeder::class,
             SshSeeder::class,
             HttpSeeder::class,
+            SmtpSeeder::class,
         ]);
     }
 }

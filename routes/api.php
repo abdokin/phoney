@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Ftp;
 use App\Models\Ssh;
 use App\Models\Http;
+use App\Models\Smtp;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -83,5 +84,27 @@ Route::post("/http", function (Request $request) {
     $data = $request->only(['remoteAddr', 'username', 'password', 'client_version', 'pwned']);
 
     $res = Http::create($data);
+    return response()->json(['message' => 'entry created successfully'], 201);
+});
+
+
+Route::post("/smtps", function (Request $request) {
+    $rules = [
+        'remoteAddr' => 'required|string',
+        'username' => 'required|string',
+        'password' => 'required|string',
+        'client_version' => 'required|string',
+        'pwned' => 'required|boolean'
+    ];
+
+    $validator = Validator::make($request->all(), $rules);
+
+    if ($validator->fails()) {
+        return response()->json(['errors' => $validator->errors()], 400);
+    }
+
+    $data = $request->only(['remoteAddr', 'username', 'password', 'client_version', 'pwned']);
+
+    $res = Smtp::create($data);
     return response()->json(['message' => 'entry created successfully'], 201);
 });

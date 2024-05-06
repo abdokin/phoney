@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use App\Traits\IsConnection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\IsConnection;
 
-class Ftp extends Model
+class Smtp extends Model
 {
     use HasFactory,IsConnection;
     protected $fillable = [
