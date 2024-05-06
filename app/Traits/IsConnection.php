@@ -24,7 +24,7 @@ trait IsConnection
             get: fn() => $this->pwned ?
             static::where('remoteAddr', $this->remoteAddr)
                 ->where('pwned', false)
-                ->count()  . " tries": "null"
+                ->count()  + 1 . " tries": "null"
         );
     }
     public function timeToPowned(): Attribute
