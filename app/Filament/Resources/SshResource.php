@@ -24,7 +24,7 @@ class SshResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return 'SSH connections';
+        return 'SSH';
     }
     public static function table(Table $table): Table
     {

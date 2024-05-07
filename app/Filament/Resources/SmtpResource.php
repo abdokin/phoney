@@ -22,7 +22,7 @@ class SmtpResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return 'SMTP connections';
+        return 'SMTP';
     }
     public static function table(Table $table): Table
     {

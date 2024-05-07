@@ -17,7 +17,7 @@ class HttpResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return 'HTTP connections';
+        return 'HTTP';
     }
     public static function table(Table $table): Table
     {

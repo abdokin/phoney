@@ -15,7 +15,7 @@ class ListFtps extends ListRecords
     
     public function getPluralModelLabel(): ?string
     {
-        return "FTP Connection";
+        return "FTPs";
     }
 
     public function getTabs(): array

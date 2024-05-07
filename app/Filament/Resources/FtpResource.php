@@ -19,7 +19,7 @@ class FtpResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return 'FTP connections';
+        return 'FTP';
     }
     public static function table(Table $table): Table
     {
